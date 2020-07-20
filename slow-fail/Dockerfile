@@ -1,3 +1,7 @@
 FROM alpine
 
-CMD sleep 120 && false
+WORKDIR /app
+
+COPY docker-deps/entry.sh /app/entry.sh
+
+ENTRYPOINT [ "/app/entry.sh" ]
